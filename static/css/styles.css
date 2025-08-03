@@ -1,0 +1,42 @@
+/* Encabezado (header) */
+header {
+  background-color: #c8e692;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* Título h2 en páginas */
+h2 {
+  color: #006400;           /* Verde oscuro */
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Botones personalizados verde mate */
+ion-button.green-matte {
+  --background: #28ba62 !important;
+  --color: white !important;
+}
+
+/* Video y canvas con borde y estilo */
+#video, #map, #foto {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #c8e692;
+  border-radius: 8px;
+  display: block;
+  margin: 26px auto;
+}
+
+/* Etqueta estilo en ion-item */
+ion-item[item-green] ion-label {
+  color: #006400;
+  font-weight: 500;
+}
+
+/* Toast con fondo verde y texto blanco */
+ion-toast .toast-wrapper {
+  --background: #28ba62;
+  --color: white;
+}

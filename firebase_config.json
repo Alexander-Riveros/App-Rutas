@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "app-rutas-seguras",
+  "private_key_id": "cfb640fe7c06055099e549b3e8778ab70cb71807",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8v+HVZ45aHBaw\nCqyYupgo3+ZFshva4bYMttXNqDYagw5eFnBOvk+Xlnrbp4sLqF7h5EALOswdIT6X\n12mFNnTeqUm+TMEbsPNqzrHR9MBg1ZDWQ9C0bHjVwqnhFkD3D3+UPb5rcmZkdD6S\nL3rMT/b8vmytxc3GghRVZh4TGY81xl8hGHAGK7J1CIvZxh9sZQsFiUFVAWuED1p8\nWzpufInZURmiO+JIPsRtFFkU/LyaxxtCP2x1FuC9A9Y4+c3og2o2eeMkOfR60iCA\ntDre+CkN0Sa96KRmdcH53Qrmykb2uNWjIYlqF4GgvKyzJcZKQRZhh1Hc8NPsLLZO\nIxKOrC+tAgMBAAECggEAJEgIC4Lf4J9Ulxs+KQ95DyZWt5/wbccEPPZqK6GBYOA/\nQ0Ox69j2KK/SxuUyO5fuQSKkUuRG9vR8eSh9jo80sNY+qBdN6Vo+uBGqKa8Pya1T\nrXQUqpHNOl20VOF3tGXkwqSJtVKkrvuPSX9Z7esTEWszLcX/c4BukynRbx9zIUU/\nBaDGw4ECeIht4dCpMxCetRdTs9BVdPUvz9sfG5OO7Kbg8l0DTPP1Xdyn7tC1Skct\nby7yhBFGxO94FRaKj/BYQLjEM1bEsGj+22bquHVk+pEMupio+BL4k+YQb7um6jRX\nGj9/Stz1Cs5MiiunkRHkC/NA27GmGklqUgcaENSpwQKBgQDxNGuQYWS/zc+KD9J+\nqLCkN+/lk2/C8qJuA/TFhxMGPiqtD8hDWbFNt0VJPFXv1za7VOniE1ji2z6Gwfvg\nMwBUpoChLH01HLZ8EFlxQ/4CfG1qMHDp25ldkuCN9tjN4PiM4rBC/SSA8VvroKq5\n4vsm+T72HpRzUjhYr0Tg21jy4QKBgQDIU8UzXM2SvCKyGnRS3hshn91mIzaICZ/L\nB8o+/0bBEGtVELrvjt0TqrkWn8TSneYTiADgjgbjY3fDYzoL8Aoyq+zskx22AYT+\nYkbEs0Tnj9rQgV5V7QugXQ5s05KZXlrIQdPQLXrqLHW/2oBL9ugG9pPq5kB1skdt\nePW0RxFiTQKBgA+73qRdZggI8dfMrmtqr5MWvwRXuLubvjK0+VuFMx1+IqSFWgfi\nqukp4lAjqmtpu30+zb7cijjKGmsJ7lcynHvpHIzm7Qfw5opzOpJj4AbjfPOnU0Y9\n9+Qdt54rEvtjCHOQOfU0tBPhKqDVKy3S+5UQPyYo2oAnRdurGzAbvtKhAoGAQ5Y3\nvzd9SBdfYVWZj2fOIY8NJGuW91i/58EOFCkOVw7SF5YYa8B4iC0eWyq2PhT1zfsh\nyKFCY69odaxhpitrVWM6ASs1Z/WlSCoiFDUjdzjKq3QqPrVGKembd03+dO4nlM7Y\nxrDBeoZbh8oRZQ+9grPofeUHNG5cuOuJgjREAjUCgYEA1LJPdY4lvSJJBZS1hx4R\n7yCecle9yMvNy/zlk7kHP1Pvmr7G+FhGq7RJFMDzs4MnMyWHAvkDUNWHCgOtDx/y\nDfq3uqv8kAJo7GyF4AjfzVpSyt6RvtGZ0q4md3Q4NMXHKeYHWEqt4dZeNxW6elj5\nBYqKZLW/udyzxPW1Lt2mVDU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@app-rutas-seguras.iam.gserviceaccount.com",
+  "client_id": "110702155912806790283",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40app-rutas-seguras.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

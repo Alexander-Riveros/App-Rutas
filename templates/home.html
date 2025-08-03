@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- ✅ Sección de bienvenida -->
+<h2><center><p>Bienvenido a vivir la experiencia con App Rutas Seguras</p></center></h2>
+
+
+<hr />
+
+<ion-content color="light" class="ion-padding">
+
+  <!-- Iniciar Sesión -->
+  <ion-card style="--ion-color-base: #a5d6a7;"> <!-- verde claro -->
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: black;">
+        Iniciar Sesión
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input id="username" color="dark"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="dark" onclick="login()">
+        Iniciar Sesión
+      </ion-button>
+
+      <div id="resultado" class="ion-text-center" style="margin-top: 20px; color: black;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Registro -->
+  <ion-card style="--ion-color-base: #e8f5e9;"> <!-- verde muy claro -->
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: #2e7d32;">
+        ¿Eres nuevo? Regístrate
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre Completo</ion-label>
+        <ion-input id="nombre" required color="dark"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input id="correo" type="email" required color="dark"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input id="clave" type="password" required color="dark"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="success" onclick="registrar()">
+        Registrar
+      </ion-button>
+      <ion-button expand="block" color="medium" fill="outline" onclick="mostrarAyuda()">
+        Ayuda
+      </ion-button>
+
+      <ion-list id="lista-usuarios" style="margin-top: 16px;"></ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+<!-- ✅ Script JS global -->
+<script>
+  // --- Broken Access Control ---
+  const usuarios = {
+    "admin": "Contenido Secreto: Configuración del sistema",
+    "usuario": "Bienvenido, usuario estándar. Aquí están tus datos básicos."
+  };
+
+  function login() {
+    const username = document.getElementById("username").value.trim();
+    const resultado = document.getElementById("resultado");
+
+    if (usuarios[username]) {
+      resultado.innerHTML = `<ion-card><ion-card-content>${usuarios[username]}</ion-card-content></ion-card>`;
+    } else {
+      resultado.innerHTML = `<ion-card color="danger"><ion-card-content>Usuario no reconocido</ion-card-content></ion-card>`;
+    }
+  }
+
+  // --- Registro con usabilidad ---
+  const listaUsuarios = [];
+
+  function registrar() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const clave = document.getElementById('clave').value.trim();
+
+    if (!nombre || !correo || !clave) {
+      mostrarToast("Por favor, completa todos los campos.", "danger");
+      return;
+    }
+
+    listaUsuarios.push({ nombre, correo });
+    mostrarToast(`¡Bienvenido, ${nombre}! Registro exitoso.`, "success");
+    limpiarFormulario();
+    actualizarListaUsuarios();
+  }
+
+  function limpiarFormulario() {
+    document.getElementById('nombre').value = '';
+    document.getElementById('correo').value = '';
+    document.getElementById('clave').value = '';
+  }
+
+  function actualizarListaUsuarios() {
+    const lista = document.getElementById('lista-usuarios');
+    lista.innerHTML = '';
+    listaUsuarios.forEach((user, index) => {
+      const item = document.createElement('ion-item');
+      item.innerHTML = `
+        Usuario: ${user.nombre}, Correo: ${user.correo}
+        <ion-button size="small" color="danger" onclick="eliminarUsuario(${index})">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      `;
+      lista.appendChild(item);
+    });
+  }
+
+  function eliminarUsuario(index) {
+    const usuario = listaUsuarios[index];
+    if (confirm(`¿Estás seguro de eliminar a ${usuario.nombre}?`)) {
+      listaUsuarios.splice(index, 1);
+      mostrarToast(`Usuario ${usuario.nombre} eliminado.`, "warning");
+      actualizarListaUsuarios();
+    }
+  }
+
+  function mostrarToast(mensaje, color) {
+    const toast = document.createElement('ion-toast');
+    toast.message = mensaje;
+    toast.duration = 2000;
+    toast.color = color;
+    toast.position = 'bottom';
+    document.body.appendChild(toast);
+    toast.present();
+  }
+
+  function mostrarAyuda() {
+    alert("Para registrarte, ingresa tu nombre, correo y contraseña, luego haz clic en Registrar.\n\nPuedes eliminar usuarios haciendo clic en el botón de eliminar junto a su nombre.");
+  }
+</script>
+
+{% endblock %}

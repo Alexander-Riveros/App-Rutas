@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Ubicación Actual</h2>
+<ion-button class="green-matte" onclick="obtenerUbicacion()">Obtener ubicación</ion-button>
+  <div id="map"></div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
+
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDA0cml2ZXJvcyIsImEiOiJjbWR2dGpwejIwdmo2Mm1xMzEycGRpY2UzIn0.IYfRmStw-OBDTuup87ql6Q';
+
+  function obtenerUbicacion() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(mostrarMapa, error => {
+        alert("Error obteniendo ubicación: " + error.message);
+      });
+    } else {
+      alert("Geolocalización no soportada.");
+    }
+  }
+
+  function mostrarMapa(posicion) {
+    const lat = posicion.coords.latitude;
+    const lon = posicion.coords.longitude;
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [lon, lat],
+      zoom: 14
+    });
+
+    new mapboxgl.Marker()
+      .setLngLat([lon, lat])
+      .setPopup(new mapboxgl.Popup().setText("¡Estás aquí!"))
+      .addTo(map);
+  }
+</script>
+{% endblock %}
